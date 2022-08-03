@@ -18,7 +18,7 @@ app = Flask(__name__)
 #Add database
 #Old SQLite DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cwmxbwsaktnudt:a7684881cd425c9969c379d82f5b527801523e6236bd582aa1d9b19bc68d7b46@ec2-52-204-157-26.compute-1.amazonaws.com:5432/dfhoj7qd28kj2m'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://vvzikgumesgxji:e040221d9ebde0dfe933a7146b7f6bf7fbd853b8e0329af11c8a54a26ebf0a0d@ec2-34-235-31-124.compute-1.amazonaws.com:5432/de3scr3k371n0k'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Lionelmessi10@@localhost/our_users'
 #Secret key
 app.config['SECRET_KEY'] = "Lionelmessi10"
@@ -268,6 +268,7 @@ def update(id):
             flash("User updated sussessfully!")
             return render_template("update.html", form=form, name_to_update = name_to_update,id=id)
         except:
+            
             flash("Error! Looks like there was a problem...try again!")
             return render_template("update.html", form=form, name_to_update = name_to_update)
     else:
@@ -399,7 +400,8 @@ class Users(db.Model, UserMixin):
     
     #Create a String
     def __repr__(self):
-        return '<Name %r>' %self.name     
+        return '<Name %r>' %self.name   
+    
 
 if '__name__' == '__main__':
     app.run(debug=True)

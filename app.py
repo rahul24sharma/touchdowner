@@ -17,7 +17,8 @@ import os
 app = Flask(__name__)
 #Add database
 #Old SQLite DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cwmxbwsaktnudt:a7684881cd425c9969c379d82f5b527801523e6236bd582aa1d9b19bc68d7b46@ec2-52-204-157-26.compute-1.amazonaws.com:5432/dfhoj7qd28kj2m'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Lionelmessi10@@localhost/our_users'
 #Secret key
 app.config['SECRET_KEY'] = "Lionelmessi10"
@@ -375,7 +376,7 @@ class Users(db.Model, UserMixin):
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
     favorite_color = db.Column(db.String(120))
-    about_author = db.Column(db.Text(500), nullable=True)
+    about_author = db.Column(db.Text(), nullable=True)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
     profile_pic = db.Column(db.String(), nullable=True)
     # Do some password stuff!

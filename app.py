@@ -12,13 +12,14 @@ import uuid as uuid
 import os
 
 
+
 #Create a flask instance
 
 app = Flask(__name__)
 #Add database
 #Old SQLite DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://gqbxddiwxskyfw:fd2d134ba1deab9241168c263da381dc7e0c0b207f6a6b402f6487c7e7a9a3f4@ec2-44-207-126-176.compute-1.amazonaws.com:5432/deh1j8dke3dn3u'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gqbxddiwxskyfw:fd2d134ba1deab9241168c263da381dc7e0c0b207f6a6b402f6487c7e7a9a3f4@ec2-44-207-126-176.compute-1.amazonaws.com:5432/deh1j8dke3dn3u'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Lionelmessi10@@localhost/our_users'
 #Secret key
 app.config['SECRET_KEY'] = "Lionelmessi10"
